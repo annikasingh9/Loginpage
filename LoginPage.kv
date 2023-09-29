@@ -1,0 +1,54 @@
+<LoginManager>:
+    Question1Screen:
+        name: "question1"
+    CorrectScreen:
+        name: "correct"
+
+        Label:
+            text: "CORRECT!!!"
+        Button:
+            text: "Advance"
+            orientation: "horizontal"
+            size_hint: .5,.1
+            pos_hint: {"x": .25}
+            on_release: answer_question(True)
+    ErrorScreen:
+        name: "error"
+        Label:
+            text: "WRONG!!!"
+<Question1Screen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            size_hint: 1, 7
+            text: "What is the state fruit of Texas?"
+        BoxLayout:
+            Button:
+                padding: "20dp"
+                text: "Peach"
+
+                on_release: root.answer_question(False)
+
+            Button:
+                padding: "20dp"
+                text: "Grapefruit"
+                on_release: root.answer_question(True)
+
+            Button:
+                padding: "20dp"
+                text: "Apricot"
+                on_release: root.answer_question(False)
+
+#<Question2Screen>:
+#    BoxLayout:
+#        orientationL "vertical"
+#        Label:
+#            text: "Complete the following verse: \n\n 'The stars at night are big and bright, _____"
+#            size_hint: 1,7
+#        TextInput:
+#            id: heart
+#            hint_text: "Enter remaining verse"
+#        Button:
+#            text: "Press Enter"
+#            on_release: root.answer_question(heart.text)
+

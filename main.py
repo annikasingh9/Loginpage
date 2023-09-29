@@ -1,16 +1,35 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from kivy.app import App
+from kivy.uix.screenmanager import Screen, ScreenManager
+from kivy.lang import Builder
+Builder.load_file("LoginPage.kv")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+class LoginPageApp(App):
+    def build(self):
+        return LoginManager()
+
+class LoginManager(ScreenManager):
+    pass
+
+class Question1Screen(Screen):
+    def answer_question(self, bool):
+        if bool:
+            self.manager.current = "correct"
+        else:
+            self.manager.current = "error"
+
+class Question2Screen(Screen):
+    def answer_question(self,bool):
+        if bool:
+            self.mananger.current = "correct"
+        else:
+            self.manager.current = "error"
+class CorrectScreen(Screen):
+    pass
+
+class ErrorScreen(Screen):
+    pass
+
+if __name__ == "__main__":
+    LoginPageApp().run()
