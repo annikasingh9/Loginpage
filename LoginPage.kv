@@ -3,15 +3,9 @@
         name: "question1"
     CorrectScreen:
         name: "correct"
+    Question2Screen:
+        name: "question 2"
 
-        Label:
-            text: "CORRECT!!!"
-        Button:
-            text: "Advance"
-            orientation: "horizontal"
-            size_hint: .5,.1
-            pos_hint: {"x": .25}
-            on_release: answer_question(True)
     ErrorScreen:
         name: "error"
         Label:
@@ -39,6 +33,19 @@
                 text: "Apricot"
                 on_release: root.answer_question(False)
 
+
+<CorrectScreen>:
+    Label:
+        text: "CORRECT!!!"
+    Button:
+        text: "Advance"
+        orientation: "horizontal"
+        size_hint: .5,.1
+        pos_hint: {"x": .25}
+        on_release: root.forward()
+<ErrorScreen>:
+    Label:
+        text: "Wrong!"
 #<Question2Screen>:
 #    BoxLayout:
 #        orientationL "vertical"

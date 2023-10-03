@@ -26,7 +26,8 @@ class Question2Screen(Screen):
         else:
             self.manager.current = "error"
 class CorrectScreen(Screen):
-    pass
+    def forward(self):
+        self.manager.current = "question 2"
 
 class ErrorScreen(Screen):
     pass
